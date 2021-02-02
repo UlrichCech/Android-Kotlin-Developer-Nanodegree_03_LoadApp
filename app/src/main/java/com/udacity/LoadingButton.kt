@@ -28,9 +28,27 @@ class LoadingButton @JvmOverloads constructor(
     private val animationDurationFastEnd = 300L
 
 
+    private var bgColor: Int
+    private var txtColor: Int
+
 
     init {
         isClickable = true
+        val typedArray = context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.LoadingButton,
+                defStyleAttr,
+                0
+        )
+        with(typedArray) {
+            bgColor = getColor(
+                    R.styleable.LoadingButton_defaultBackgroundColor,
+                    resources.getColor(R.color.colorPrimary, context.theme))
+            txtColor = getColor(
+                    R.styleable.LoadingButton_defaultTextColor,
+                    resources.getColor(R.color.white, context.theme))
+        }
+        typedArray.recycle()
     }
 
 
@@ -106,7 +124,7 @@ class LoadingButton @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         // draw button
-        paint.color = getColor(context, R.color.colorPrimary)
+        paint.color = bgColor
 
         buttonRect = Rect(0, 0, measuredWidth, measuredHeight)
         canvas?.drawRect(buttonRect, paint)
@@ -157,7 +175,7 @@ class LoadingButton @JvmOverloads constructor(
         }
 
         // draw button label
-        paint.color = Color.WHITE
+        paint.color = txtColor
         paint.getTextBounds(buttonLabel, 0, buttonLabel.length, buttonRect)
         val x: Float = measuredWidth / 2f
         val y: Float = measuredHeight / 2f + buttonRect.height() / 2f - buttonRect.bottom
