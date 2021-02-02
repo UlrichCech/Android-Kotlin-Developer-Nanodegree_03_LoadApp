@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/content_detail_scene"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <TextView
+        android:id="@+id/filenameLabelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/details_filename_label"
+        android:textSize="@dimen/selection_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/filenameTV"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/selection_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineMiddle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="This is a very very long filename to test for  line break" />
+
+    <TextView
+        android:id="@+id/statusLabelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/details_status_label"
+        android:textSize="@dimen/selection_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filenameTV" />
+
+    <TextView
+        android:id="@+id/statusTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/selection_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/filenameTV"
+        app:layout_constraintTop_toBottomOf="@+id/filenameTV"
+        tools:text="Success" />
+
+    <Button
+        android:id="@+id/backToMainBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/colorAccent"
+        android:text="@string/details_ok_button_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/selection_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

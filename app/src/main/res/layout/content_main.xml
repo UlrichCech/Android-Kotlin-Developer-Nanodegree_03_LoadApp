@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimaryDark"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_cloud_download_24"
+        android:contentDescription="@string/clouddownloadimage_content_description"/>
+
+    <RadioGroup
+        android:id="@+id/selectionGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo">
+
+        <RadioButton
+            android:id="@+id/glideOptionRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/downloadOptionGlide"
+            android:textSize="@dimen/selection_text_size" />
+
+        <RadioButton
+            android:id="@+id/projectOptionRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/downloadOptionProject"
+            android:textSize="@dimen/selection_text_size" />
+
+        <RadioButton
+            android:id="@+id/projectOptionRetrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/downloadOptionRetrofit"
+            android:textSize="@dimen/selection_text_size" />
+
+    </RadioGroup>
+
+    <com.udacity.LoadingButton
+        android:id="@+id/custom_button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectionGroup"
+        app:layout_constraintVertical_bias="0.97"
+        app:defaultBackgroundColor="@color/colorPrimary"
+        app:defaultTextColor="@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

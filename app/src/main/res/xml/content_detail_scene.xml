@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/filenameLabelTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/filenameTV"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineRight"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/statusLabelTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/filenameTV" />
+        <Constraint
+            android:id="@+id/statusTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/filenameTV" />
+        <Constraint
+            android:id="@+id/backToMainBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/filenameLabelTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/filenameTV"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineMiddle"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/statusLabelTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filenameTV" />
+        <Constraint
+            android:id="@+id/statusTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineMiddle"
+            app:layout_constraintTop_toBottomOf="@+id/filenameTV" />
+        <Constraint
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/backToMainBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000">
+    </Transition>
+
+</MotionScene>
